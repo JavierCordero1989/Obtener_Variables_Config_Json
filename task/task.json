@@ -1,0 +1,40 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Microsoft/azure-pipelines-task-lib/master/tasks.schema.json",
+    "id": "c4bd1d1d-c5b8-4aaa-bfd8-dec82804cbe2",
+    "name": "ObtenerVariablesXmlJson",
+    "friendlyName": "Obtener Nodos XML a formato JSON",
+    "description": "Permite obtener los nodos appSettings, endpoints, connectionStrings y endpoints de un archivo XML, a formato JSON.",
+    "helpMarkDown": "",
+    "category": "Utility",
+    "author": "José Javier Cordero León",
+    "version": {
+        "Major": 0,
+        "Minor": 0,
+        "Patch": 1
+    },
+    "instanceNameFormat": "Obtener nodos del archivo $(configFile)",
+    "inputs": [
+        {
+            "name": "configFile",
+            "type": "filePath",
+            "label": "Archivo XML",
+            "defaultValue": "",
+            "required": true,
+            "helpMarkDown": "Archivo XML del cual se desean obtener los nodos. Solo archivos con formato **.config** y **.xml** serán aceptados."
+        },
+        {
+            "name": "jsonFilename",
+            "type": "string",
+            "label": "Nombre del archivo JSON",
+            "defaultValue": "",
+            "required": true,
+            "helpMarkDown": "Nombre del archivo JSON en donde se guardarán los nodos del XML. **No** incluya la extensión **.json** en el nombre."
+        }
+    ],
+    "minimumAgentVersion": "2.141.0",
+    "execution": {
+        "PowerShell": {
+            "target": "SacarVariablesDeConfig.ps1"
+        }
+    }
+}
