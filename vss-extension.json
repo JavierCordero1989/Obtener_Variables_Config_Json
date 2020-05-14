@@ -1,0 +1,37 @@
+{
+    "manifestVersion": 1,
+    "id": "obtener_variables_config_json",
+    "name": "Obtener Nodos XML a formato JSON",
+    "version": "0.0.1",
+    "publisher": "JavierCorderoLeon",
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],    
+    "description": "Permite obtener los nodos appSettings, endpoints, connectionStrings y endpoints de un archivo XML, a formato JSON.",
+    "categories": [
+        "Azure Pipelines"
+    ],
+    "icons": {
+        "default": "images/default-icon.png",
+        "large": "images/large-icon.png"
+    },
+    "files": [
+        {
+            "path": "task"
+        }
+    ],
+    "contributions": [
+        {
+            "id": "obtener_variables_config_json",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "GetXmlVariablesToJson"
+            }
+        }
+    ]
+}
